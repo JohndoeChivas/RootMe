@@ -1,0 +1,8 @@
+## Methode
+
+Regardez le code source, on observe un lien interne : include("admin/pass.html"). Il suffit de suivre la source comme indiqué :)
+http://challenge01.root-me.org/web-serveur/ch4/admin/
+puis suivre le chemin vers le mot de passe.
+http://challenge01.root-me.org/web-serveur/ch4/admin/backup/admin.txt
+
+flag : LINUX

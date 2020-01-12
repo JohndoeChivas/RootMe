@@ -1,0 +1,12 @@
+## Methode
+
+Les systeme nginx possèdent des fichiers de sauvegardes automatiques causés par les editeurs de texts tels que emacs, vim, etc...
+les extensions sont ~, .bak, .swp
+https://fr.wikipedia.org/wiki/Liste_d%27extensions_de_fichiers
+
+lancez une requête au serveur pour cet url :  http://challenge01.root-me.org/web-serveur/ch11/index.php~
+téléchargez le fichier index.php~
+$username="ch11";
+$password="OCCY9AcNm1tj";
+
+flag: OCCY9AcNm1tj

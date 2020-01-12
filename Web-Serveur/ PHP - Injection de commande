@@ -1,0 +1,4 @@
+## Methode 
+l'input permet de générer une commande ping. Il suffit de declencher une autre commande en mettant un ";" entre les deux
+127.0.0.1 ; cat index.php  ; pour afficher le fichier. Puis regarder le code source.
+flag : S3rv1ceP1n9Sup3rS3cure

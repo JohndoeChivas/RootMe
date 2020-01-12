@@ -1,0 +1,4 @@
+## Methode 
+Utilisez Burp pour modifier la requête http.
+modifiez le parametre User-Agent dans l'entête par User-agent : admin 
+flag: rr$Li9%L34qd1AAe27

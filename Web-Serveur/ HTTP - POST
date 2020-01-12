@@ -1,0 +1,5 @@
+## Methode
+
+Utilisez Burp pour modifier l'entête http
+Modifiez le parametre POST score et le tour est joué.
+flag: H7tp_h4s_N0_s3Cr37S_F0r_y0U

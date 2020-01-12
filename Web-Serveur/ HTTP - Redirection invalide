@@ -1,0 +1,6 @@
+## Methode
+
+Utilisez Burp et modifiez l'entête de la requête http.
+Remplacer login.php par index.php.
+Regardez la requête généré par le serveur. Sans le exit() apres la redirection, le serveur renvoie le contenu de la page. Cela permet de voir la reponse du serveur dans Burp
+flag: ExecutionAfterRedirectIsBad

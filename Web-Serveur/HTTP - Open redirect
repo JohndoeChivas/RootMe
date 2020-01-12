@@ -1,0 +1,7 @@
+## Methode
+
+Utilisez Burp pour la modification de requête HTTP
+On observe que le hash(parametre h) doit correspondre au site référencé (parametre url)
+Il suffit de prendre un site random et de lui appliquer un chiffrement md5. 
+Puis remplacez le parametre h par le chiffrement md5 et url par le site random choisi
+flag : e6f8a530811d5a479812d7b82fc1a5c5

@@ -1,0 +1,7 @@
+## Methode
+
+On remarque dans l'entête du serveur la ligne suivante :
+Header-RootMe-Admin: none
+Il suffit d'ajouter cette ligne dans la requête HTTP qu'on envoie au serveur avec la valeur admin grâce a Burp
+Header-RootMe-Admin: admin
+flag : HeadersMayBeUseful

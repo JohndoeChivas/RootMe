@@ -1,0 +1,28 @@
+## Methode
+
+On sait que le serveur heberge les fichiers necessaire au bon fonctionnement du forum phpBB.
+Il suffit de jeter un oeil sur la documentation : https://www.phpbb.com/community/docs/INSTALL.html
+
+"Point your web browser to the location where you uploaded the phpBB3 files with the addition of install/app.php or simply install/.
+ e.g. http://www.example.com/phpBB3/install/app.php, http://www.example.com/forum/install/"
+
+Il est stipulé que les fichiers du forum sont stockés dans le dossier install. Il suffit donc de modifier l'url comme ceci :
+http://challenge01.root-me.org/web-serveur/ch6/phpbb/install/
+
+Ainsi on peut accéder au fichier install.php qui nous renvoie vers le flag.
+
+flag: karambar
+
+remarque : 
+
+Bravo, vous venez de decouvrir une des nombreuses failles de phpBB.
+
+Cette faille est en fait un oubli du Webmaster qui aurait du enlever
+ces dossiers. Ils contiennent les pages d'installations du forum phpbb.
+Ce genre de chose n'existe plus car les développeurs mettent en place des
+systèmes de vérification pour faciliter la tâche aux plus têtes en l'air
+Ce qu'il faut comprendre par contre c'est qu'on découvre souvent beaucoup de choses
+en trifouillant des URL...
+Grâce à elles, vous pouvez remettre à zéro le forum, et changer tous les passwords
+administrateur, étant donné que vous reinitialisez le forum.
+Vous avez donc ensuite un contrôle total du forum !!

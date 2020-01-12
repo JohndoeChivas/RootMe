@@ -1,0 +1,23 @@
+## Methode 
+
+Utilisez Burp. On remarque le paramètre Authorization avec la valeur Basic YWRtaW46YWRtaW4=
+
+La méthode Basic est la plus simple, mais également la moins sécurisée car elle transmet le mot de passe codé en base 64 qui se décode aisément. 
+Elle n'est recommandée qu'avec une connexion chiffrée (protocole HTTPS).
+
+Il suffit de decoder YWRtaW46YWRtaW4= en base 64.
+
+
+
+Cependant, la plupart des applications web n'ont besoin de répondre qu'aux requêtes GET et POST
+Bizarrement les autres méthodes HTTP valides ne sont pas supportées par le standard HTML [4].
+Toute autre méthode HTTP que GET ou POST doit être appelée en dehors du document HTML. 
+
+Tant que l'application web à tester n'appelle pas spécifiquement des méthodes HTTP non standard, tester la falsification de verbe HTTP est très simple.
+Si le serveur accepte d'autres types de requêtes que GET ou POST, le test échoue. 
+
+
+=> Il suffit donc de modifier GET par PUT et le tour est joué dans l'entête de la requête HTTP
+le mot de passe se trouve dans le contenu de la reponse envoyé par le serveur.
+
+flag: a23e$dme96d3saez$$prap
