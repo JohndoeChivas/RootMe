@@ -1,0 +1,3 @@
+import base64
+coded_string = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiZ3Vlc3QifQ.s8y9Wc6no_mtszzBfxeD_GGWGCMa5Ehgu5eRXIT04G8q2jyEnGWpehck_yA0WroLp-n43UjcLe6kHYlJtUeLzw"
+print(base64.b64decode(coded_string))
